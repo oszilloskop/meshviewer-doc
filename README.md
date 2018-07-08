@@ -25,12 +25,4 @@ Standalone: [https://regensburg.freifunk.net/meshviewer/](https://regensburg.fre
 
 ## Known instances
 
-| Community | Instance | Repo GitHub |
-| --- | --- | --- |
-| Freifunk Bremen | [https://map.bremen.freifunk.net/](https://map.bremen.freifunk.net/) | [FreifunkBremen/meshviewer-ffrgb](https://github.com/FreifunkBremen/meshviewer-ffrgb) |
-| Freifunk Hochstift | [https://map.hochstift.freifunk.net/](https://map.hochstift.freifunk.net/) | &nbsp; |
-| Freifunk in Mainz, Wiesbaden & Umgebung | [https://map.freifunk-mwu.de/](https://map.freifunk-mwu.de/) | &nbsp; |
-| Freifunk Westpfalz | https://map.freifunk-westpfalz.de/ | &nbsp; |
-| Freifunk Gera-Greiz | https://www.freifunk-gera-greiz.de/meshviewer/ | &nbsp; |
-| Freifunk Hannover | https://hannover.freifunk.net/karte/ | &nbsp; |
-| Freifunk Darmstadt | https://meshviewer.darmstadt.freifunk.net/ | &nbsp; |
+[Moved to multiple instances - About tab](https://multi.meshviewer.org/) (best performance in chromium/e or edge)
