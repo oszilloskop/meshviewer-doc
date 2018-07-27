@@ -20,3 +20,6 @@
 * [ePub](https://doc.meshviewer.org/meshviewer.epub)
 * [Mobi](https://doc.meshviewer.org/meshviewer.mobi)
 
+## Info
+* [Impressum](https://regensburg.freifunk.net/verein/impressum/)
+* [Datenschutz](https://regensburg.freifunk.net/verein/datenschutz/)
