@@ -207,7 +207,7 @@ This option allows to show link statistics depending on the following case-sensi
 - `title` for the image
 
 To insert the source or target variable in either `href`, `image` or `title`
-you can use the case-sensitive template strings `{SOURCE_ID}`, `{TARGET_ID}`, `{SOURCE_NAME}`, `{TARGET_NAME}`, `{LOCALE}` and `{TIME}` as cache-breaker.
+you can use the case-sensitive template strings `{SOURCE_ID}`, `{TARGET_ID}`, `{SOURCE_MAC}`, `{TARGET_MAC}`, `{SOURCE_ADDR}`, `{TARGET_ADDR}`, `{SOURCE_NAME}`, `{TARGET_NAME}`, `{LOCALE}` and `{TIME}` as cache-breaker.
 
 {% sample lang='js' %}
 ```js
@@ -250,6 +250,31 @@ Example for `siteNames`:
 ```
 {% endmethod %}
 
+{% method %}
+### linkList (array, optional)
+
+In this array is a list of links displayed in Mehsviewer. It can be used for links to legal notice, web or stats:
+
+- `title` Name/title of link
+- `href` url of link
+
+{% sample lang='js' %}
+Example for `linkList`:
+
+```js
+    'linkList': [
+      {
+        'title': 'Impressum',
+        'href': '/verein/impressum/'
+      },
+      {
+        'title': 'Datenschutz',
+        'href': '/verein/datenschutz/'
+      }
+    ]
+]
+```
+{% endmethod %}
 
 ## config.default.js
 
