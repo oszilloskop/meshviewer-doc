@@ -253,7 +253,7 @@ Example for `siteNames`:
 {% method %}
 ### linkList (array, optional)
 
-In this array is a list of links displayed in Mehsviewer. It can be used for links to legal notice, web or stats:
+In this array is a list of links displayed in Meshviewer. It can be used for links to legal notice, web or stats:
 
 - `title` Name/title of link
 - `href` url of link
@@ -273,6 +273,70 @@ Example for `linkList`:
       }
     ]
 ]
+```
+{% endmethod %}
+
+{% method %}
+### geo (array, optional)
+
+In this array is definition for GeoJSON displayed Meshviewer.
+
+- `json` geoJSON (javascript allowed e.g. load external json)
+- `option` style or other options
+
+{% sample lang='js' %}
+Example for `geo`:
+
+```js
+geo: [
+      {
+        json: [
+          {
+            'type': 'Feature',
+            'geometry': {
+              'type': 'Polygon',
+              'coordinates': [
+                [
+                  [
+                    12.04925537109375,
+                    49.036517514836994
+                  ],
+                  [
+                    12.033462524414062,
+                    49.021660359632115
+                  ],
+                  [
+                    12.058181762695312,
+                    48.99553703238219
+                  ],
+                  [
+                    12.11311340332031,
+                    49.001843917978526
+                  ],
+                  [
+                    12.122726440429686,
+                    49.03381654386847
+                  ],
+                  [
+                    12.04925537109375,
+                    49.036517514836994
+                  ]
+                ]
+              ]
+            }
+          }
+        ],
+        option: {
+          style: {
+            color: '#e23535',
+            weight: 5,
+            opacity: 0.4,
+            fillColor: '#6de922',
+            fillOpacity: 0.1
+          }
+        }
+      }
+    ]
 ```
 {% endmethod %}
 

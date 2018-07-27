@@ -4,6 +4,7 @@
 ## 11.0.0 [not released yet]
 * [!!!][TASK] Router hash form `#` to `#!`
 * [TASK] Domain code adjustments [panned]
+* [TASK] GeoJSON support
 * [TASK] Night mode color adjustments
 * [TASK] NodeJS v10 support, removed v9 support (active v6,v8,v10)
 * [TASK] Add possibility for custom links e.g. DSGVO
