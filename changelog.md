@@ -1,5 +1,31 @@
 # Changelog
 
+
+## 11.0.0 [not released yet]
+* [!!!][TASK] Router hash form `#` to `#!`
+* [TASK] Domain code adjustments [panned]
+* [TASK] Night mode color adjustments
+* [TASK] NodeJS v10 support, removed v9 support (active v6,v8,v10)
+* [TASK] Add possibility for custom links e.g. DSGVO
+* [TASK] Add OpenGraph, twitter card & Microdata + Favicon update
+* [TASK] Simple offline service worker
+* [TASK] Add source/target address to link variables with fallback (babel support)
+* [TASK] Show rectangle gateway in forcegraph
+* [TASK] Show offline 
+* [TASK] Dependency updates
+* [BUGFIX] URL router can fail at high load
+* [BUGFIX] Loadavg with multiple cores in %
+* [BUGFIX] Allow negative coordinates
+* [More detail in the commit history](https://github.com/ffrgb/meshviewer/commits/master)
+
+### Additionally
+* `multiple`-branch
+	* Our test environment has now over 21500 nodes on a single map and still works  https://multi.meshviewer.org/
+* We moved the docu, website, multi and develop instance - currently no auto builds on mast branch
+* Multiple changes on webhooks and tests like scrutinizer
+
+**THX @all active and passed contributors!**
+
 ## 10.0.0
 
 * Performance improvements (critical path, avoid blocking code)
@@ -37,7 +63,7 @@
 * Few Internet Explorer 11 fixes
 * Necessary polyfills - no overhead
 * **Switch to meshviewer.json - less depth, new informations**
-* [A lot more in the commit history](https://github.com/ffrgb/meshviewer/commits/develop)
+* [A lot more in the commit history](https://github.com/ffrgb/meshviewer/commits/master)
 
 
 
