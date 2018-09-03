@@ -1,6 +1,6 @@
 # Build/Install
 
-## Build utilises
+## Build utilities
 
 * yarn [https://yarnpkg.com/](https://yarnpkg.com/)
 * optional: gulp-cli (or use `yarn run gulp [command]` instead of `gulp`)
@@ -27,7 +27,7 @@ yarn global add gulp-cli
 
 1. [Change configuration to your community](/config_js.md)
 2. \(optional\) Edit files in `scss/custom/`. Additional information under [development](/development.md).
-3. \(optional\) Change logo svg and generate new icons or adjaust the images yourself.
+3. \(optional\) Change `logo.svg` and generate new icons or adjust the images yourself.
 
 ## Building
 
