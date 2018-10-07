@@ -3,9 +3,11 @@
 ## Documentation
 * [Overview](README.md)
 * [About](about.md)
-* [Build/Install](build_install.md)
-    * [Map layers](build_install/map-layers.md)
-    * [Deploy on Netlify](build_install/deploy-on-netlify.md)
+* [Install](build_install.md)
+* Examples
+    * [Map layers](examples/map-layers.md)
+    * [GeoJSON examples](examples/geo-json.md)
+    * [Deploy on Netlify](examples/deploy-on-netlify.md)
 * [Development](development.md)
 * [Debug](debug.md)
 * [Supported backends](supported-backends.md)

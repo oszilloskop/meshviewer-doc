@@ -284,48 +284,19 @@ In this array is definition for GeoJSON displayed Meshviewer.
 - `json` geoJSON (javascript allowed e.g. load external json)
 - `option` style or other options
 
+[Multiple GeoJSON examples](examples/geo-json.md)
+
 {% sample lang='js' %}
 Example for `geo`:
 
 ```js
 geo: [
       {
-        json: [
-          {
-            'type': 'Feature',
-            'geometry': {
-              'type': 'Polygon',
-              'coordinates': [
-                [
-                  [
-                    12.04925537109375,
-                    49.036517514836994
-                  ],
-                  [
-                    12.033462524414062,
-                    49.021660359632115
-                  ],
-                  [
-                    12.058181762695312,
-                    48.99553703238219
-                  ],
-                  [
-                    12.11311340332031,
-                    49.001843917978526
-                  ],
-                  [
-                    12.122726440429686,
-                    49.03381654386847
-                  ],
-                  [
-                    12.04925537109375,
-                    49.036517514836994
-                  ]
-                ]
-              ]
-            }
-          }
-        ],
+        json: function () {
+          return Promise.all([
+              // Content
+          ]);
+        },
         option: {
           style: {
             color: '#e23535',
