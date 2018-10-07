@@ -62,7 +62,7 @@ Ask us friendly and you can use our layers. Compared to Standard OSM our tiles a
 | Retina tiles | no |
 | Tracking | unknown |
 
-{% sample lang="json" %}
+{% sample lang="js" %}
 ```json
 
     {
@@ -87,7 +87,7 @@ Ask us friendly and you can use our layers. Compared to Standard OSM our tiles a
 | Retina tiles | no |
 | Tracking | unknown |
 
-{% sample lang="json" %}
+{% sample lang="js" %}
 Requries API token - free account with limited views available.
 
 ```json
@@ -108,7 +108,7 @@ Requries API token - free account with limited views available.
 {% method %}
 #### Satellite hybrid View
 
-{% sample lang="json" %}
+{% sample lang="js" %}
 ```json
     {
       "name": "HERE.hybridDay",
@@ -137,7 +137,7 @@ Requries API token - free account with limited views available.
 
 
 
-{% sample lang="json" %}
+{% sample lang="js" %}
 ```json
 
     {
