@@ -1,19 +1,16 @@
 # Configuration
 
-Gulp merges config.js into config.default.js (config.default.js will be overwriten). **This is no deep merge**, you need to configure **complete** array or object like `nodeInfobox` or `supportedLocale`. You can use JS and functions to create new node details rows.
+Gulp merges `config.js` into `config.default.js` (`config.default.js` will be overwritten). **This is no deep merge**, i.e. you always need to add **complete** arrays or objects like `nodeInfobox` or `supportedLocale` to your `config.js`. You can use JS and functions to create new node details rows.
 
-> **config.default.js** contains settings like `supportedLocale` or `maxAge`
-
-> **config.js** contains communiy specific settings like stat images or `siteName` (and your overwrites of config.default.js)
-
-
+> **`config.default.js`** contains settings like `supportedLocale` or `maxAge`
+> **`config.js`** contains community specific settings like statistic images or `siteName` (and the values/arrays/objects you want to overwrite in config.default.js)
 
 ## config.js
 
 {% method %}
 ### dataPath (string/array)
-`dataPath` needs a path/URL with meshviewer.js provided in an array. Don't forget the trailing slash!
-Also, proxying the data through a webserver will allow brotli or deflat/gzip and thus will greatly reduce bandwidth consumption. `Access-Control-Allow-Origin: "*"` header should be added to allow local development.
+`dataPath` needs a path/URL with `meshviewer.js` provided in an array. Don't forget the trailing slash!
+Also, proxying the data through a webserver will allow `brotli` or `deflat/gzip` which will greatly reduce bandwidth consumption. The header `Access-Control-Allow-Origin: "*"` should be added to allow local development.
 
 {% sample lang="js" %}
 Single data source
@@ -35,7 +32,7 @@ Multiple data sources
 
 {% method %}
 ### siteName (string)
-Change this to match your communities name. It will be used as HTML `<title>` and header.
+Set this to match your community name. It's used in several places.
 
 {% sample lang='js' %}
 ```js
@@ -45,17 +42,18 @@ Change this to match your communities name. It will be used as HTML `<title>` an
 
 ### mapLayers (List)
 
-A list of objects describing map layers. Each object has at least `name`, `url` and `config` properties. [Example layers and configuration](http://leaflet-extras.github.io/leaflet-providers/preview/) (map against config.js).
+A list of objects describing the map layers. Each object has at least the properties `name`, `url` and `config`.
 
-[Layer provider list for meshviewer](/map-layers.md)
+- A list of some possible layers available: [Example layers and configuration](http://leaflet-extras.github.io/leaflet-providers/preview/), but every source supporting the used standard will work.
+- [Layer provider list for meshviewer](/build_install/map-layers.md)
 
 {% method %}
 #### mode (string, optional)
 
-Allows to load an additional style for a night mode or a similar use case. Possible are inline style or link. 
-Inline avoids re-rendering and maybe issues with label-layer update. Important are class "css-mode mode-name" and media "not".
+Allows to load an additional style for a night mode or a similar use case. It is possible to load the stylesheet `inline` or with a `link`-tag. 
+Inline avoids re-rendering and possible issues with label-layer updates. It is important to add the following attributes: `class="css-mode mode-name" media="not"`.
 
-_Default is night.css inline in index.html_
+_Default mode is `night` which is added inline in `index.html`_
 
 {% sample lang='js' %}
 ```js
@@ -103,7 +101,7 @@ End a time range for first map. Stops sort this mapLayer.
 {% method %}
 ### fixedCenter (array[array, array])
 
-Choose a rectangle that must be displayed on the map. Set 2 Locations and everything between will displayed.
+This sets the initial area shown on loading the map. Chose exactly two locations. Everything between those two locations will be displayed. Nodes outside the initial `fixedCenter`` will be visible then you use map controls like zoom or moving around on the map.
 
 {% sample lang='js' %}
 Examples for `fixedCenter`:
@@ -128,16 +126,13 @@ Examples for `fixedCenter`:
 
 This option allows to show node statistics depending on following case-sensitive parameters:
 
-- `name` header of statistics segment in infobox
-- `href` absolute or relative URL to statistics image
-- `image` `(required)` absolute or relative URL to image,
+- `name` - header of statistics segment in the infobox
+- `href` - absolute or relative URL to statistics image
+- `image` **(required)** - absolute or relative URL to image,
   can be the same like `href`
-- `title` for the image
+- `title` - the image title tag (also used as mouse hover)
 
-To insert current variables in either `href`, `image` or `title`
-you can use the case-sensitive template string `{NODE_ID}`, `{NODE_NAME}`, `{LOCALE}` and `{TIME}` as cache-breaker.
-
-In order to have statistics images available, you have to set up an instance of each [Prometheus](http://prometheus.io/) and [Grafana](http://grafana.org/).ve template string `{NODE_ID}`, `{NODE_NAME}`, `{LOCALE}` and `{TIME}` as cache-breaker.
+To insert variables in either `href`, `image` or `title` you can use the case-sensitive template strings `{NODE_ID}`, `{NODE_NAME}`, `{LOCALE}` and `{TIME}` (as cache-breaker).
 
 {% sample lang='js' %}
 Examples for `nodeInfos`:
@@ -168,15 +163,14 @@ In order to have statistics images available, you have to set up an instance of 
 
 This option allows to show global statistics on statistics page depending on following case-sensitive parameters:
 
-- `name` header of statistics segment in infobox
-- `href` absolute or relative URL to statistics image
-- `image` `(required)` absolute or relative URL to image,
+- `name` - header of statistics segment in the infobox
+- `href` - absolute or relative URL to statistics image
+- `image` **(required)** - absolute or relative URL to image,
   can be the same like `href`
-- `title` for the image
+- `title` - the image title tag (also used as mouse hover)
 
-To insert locale or cache-breaker variable in either `href`, `image` or `title`
-you can use the case-sensitive template strings `{LOCALE}` and `{TIME}` as cache-breaker.
-
+To insert the variables locale or time (as cache-breaker) in either `href`, `image` or `title`
+you can use the case-sensitive template strings `{LOCALE}` and `{TIME}`.
 
 
 {% sample lang='js' %}
@@ -200,14 +194,14 @@ Examples for `globalInfos` using Grafana server rendering:
 
 This option allows to show link statistics depending on the following case-sensitive parameters:
 
-- `name` header of statistics segment in infobox
-- `href` absolute or relative URL to statistics image
-- `image` `(required)` absolute or relative URL to image,
+- `name` - header of statistics segment in the infobox
+- `href` - absolute or relative URL to statistics image
+- `image` **(required)** - absolute or relative URL to image,
   can be the same like `href`
-- `title` for the image
+- `title` - the image title tag (also used as mouse hover)
 
-To insert the source or target variable in either `href`, `image` or `title`
-you can use the case-sensitive template strings `{SOURCE_ID}`, `{TARGET_ID}`, `{SOURCE_MAC}`, `{TARGET_MAC}`, `{SOURCE_ADDR}`, `{TARGET_ADDR}`, `{SOURCE_NAME}`, `{TARGET_NAME}`, `{LOCALE}` and `{TIME}` as cache-breaker.
+To insert the source or target variables in either `href`, `image` or `title`
+you can use the case-sensitive template strings `{SOURCE_ID}`, `{TARGET_ID}`, `{SOURCE_MAC}`, `{TARGET_MAC}`, `{SOURCE_ADDR}`, `{TARGET_ADDR}`, `{SOURCE_NAME}`, `{TARGET_NAME}`, `{LOCALE}` and `{TIME}` (as cache-breaker).
 
 {% sample lang='js' %}
 ```js
@@ -226,10 +220,10 @@ you can use the case-sensitive template strings `{SOURCE_ID}`, `{TARGET_ID}`, `{
 {% method %}
 ### siteNames (array, optional)
 
-In this array name definitions for site statistics and node info can be saved. This requires one object for each site code. This object must contain:
+In this array name definitions for site statistics and node info can be set. This requires one object for each `site` code. This object must contain:
 
-- `site` the site code
-- `name` the defined written name for this site code
+- `site` - the site code
+- `name` - the displayed name for this site
 
 If neither `siteNames` nor `showSites` are set, site statistics and node info won't be displayed.
 
@@ -253,10 +247,10 @@ Example for `siteNames`:
 {% method %}
 ### linkList (array, optional)
 
-In this array is a list of links displayed in Meshviewer. It can be used for links to legal notice, web or stats:
+Defines an additional list of links displayed in the infobox. It can be used for links to legal notice, web or stats:
 
-- `title` Name/title of link
-- `href` url of link
+- `title` - the image title tag (also used as mouse hover) link
+- `href` - URL of the link
 
 {% sample lang='js' %}
 Example for `linkList`:
@@ -279,10 +273,10 @@ Example for `linkList`:
 {% method %}
 ### geo (array, optional)
 
-In this array is definition for GeoJSON displayed Meshviewer.
+The definition for additional custom GeoJSON objects to be displayed in Meshviewer.
 
-- `json` geoJSON (javascript allowed e.g. load external json)
-- `option` style or other options
+- `json` - geoJSON (javascript allowed e.g. load external json)
+- `option` - style or other options
 
 [Multiple GeoJSON examples](examples/geo-json.md)
 
@@ -315,7 +309,7 @@ geo: [
 
 {% method %}
 ### reverseGeocodingApi (string)
-Use a reverse proxy or own geocoding server for more data privacy and avoiding NoScript second domain. Use in location-picker.
+Settings for a reverse proxy or your own geocoding server used by the location-picker. Setting up this will enhance data privacy and avoid problems caused by script-blockers like NoScript in case you are using different domains for your json data or the map tiles. External URLs need to be considered in your privacy policy.
 
 {% sample lang='js' %}
 ```js
@@ -326,8 +320,8 @@ Use a reverse proxy or own geocoding server for more data privacy and avoiding N
 
 {% method %}
 ### maxAge (string)
-Nodes being online for less than maxAge days are considered "new". Likewise,
-nodes being offline for more than than maxAge days are considered "lost".
+Nodes being online for less than `maxAge` days are considered "new". Likewise,
+nodes being offline for more than than `maxAge` days are considered "lost".
 
 {% sample lang='js' %}
 ```js
@@ -338,8 +332,8 @@ nodes being offline for more than than maxAge days are considered "lost".
 
 {% method %}
 ### maxAgeAlert (integer)
-Nodes being offline for more than than maxAge days are considered "lost".
-Lost will be splitted in alert and lost.
+Nodes being offline for more than than `maxAge` days are considered "lost".
+Lost will be split up in `alert` and `lost`.
 
 {% sample lang='js' %}
 ```js
@@ -350,7 +344,7 @@ Lost will be splitted in alert and lost.
 
 {% method %}
 ### nodeZoom (integer)
-Max level to be applied by clicking a node or opening a node. Value `18` is a good default, so nearby buildings and streets should be visible.
+The zoom level that is used when clicking on a node or when using a deep-link URL directly to a node. The value `18` is a good default where nearby buildings and streets should be visible.
 
 {% sample lang='js' %}
 ```js
@@ -361,7 +355,7 @@ Max level to be applied by clicking a node or opening a node. Value `18` is a go
 
 {% method %}
 ### labelZoom (integer)
-Min. level for node labels shown on the map. Labels aren't shown in first zoom levels and every possible level labelZoom to maxZoom needs performance.
+Min. zoom level from which on the node labels are shown on the map. Note that every level in between `labelZoom` and `maxZoom` (defined in `mapLayers`) has a negative performance impact.
 
 {% sample lang='js' %}
 ```js
@@ -372,7 +366,7 @@ Min. level for node labels shown on the map. Labels aren't shown in first zoom l
 
 {% method %}
 ### clientZoom (integer)
-Min. level to set starting layer for client dots on map.
+The min. level from which on the client dots are visible. Note that every level in between `clientZoom` and `maxZoom` (defined in `mapLayers`) has a negative performance impact.
 
 {% sample lang='js' %}
 ```js
@@ -383,12 +377,12 @@ Min. level to set starting layer for client dots on map.
 
 {% method %}
 ### nodeAttr (array)
-Remove or add node properties in detail view. Support `show` function in `utils/node` or properties from node (1 depth only)
+Remove or add node properties in details view. The value can be a node attribute (depth 1) or any of the functions with a name starting with "show" from `lib/utils/node.js`.
 
 {% sample lang='js' %}
 ```js
 'nodeAttr': [
-    // value can be a node attribute (1 depth) or a a function in utils/node with prefix show
+    // value can be a node attribute (depth 1) or any of the functions with a name starting with "show" from lib/utils/node.js with
     {
       'name': 'node.status',
       'value': 'Status'
@@ -457,7 +451,7 @@ Remove or add node properties in detail view. Support `show` function in `utils/
 
 {% method %}
 ### supportedLocale (array)
-Add supported locale (with matching language file in locales/*.js) and it will be matched against the browser language setting. Fallback is the first language in the array.
+Add supported locale (with matching language file in `locales/*.js`). This will be matched against the browser language setting. Fallback will be the first language in the array.
 
 {% sample lang='js' %}
 Example for `supportedLocale`:
@@ -477,14 +471,14 @@ Example for `supportedLocale`:
 
 {% method %}
 ### color (array)
-Different color values for all canvas related settings and couldn't be done via SCSS.
+Different color values for all canvas related settings. Couldn't be done via SCSS.
 
 {% endmethod %}
 
 
 {% method %}
 ### cacheBreaker (string)
-Will be replaced in every build to avoid missing or outdated language strings, because language.js isn't up to date.
+Will be replaced in every build to avoid missing or outdated language strings because `language.js` is not up to date.
 
 _Fixed value (vy0zx)._
 {% endmethod %}
