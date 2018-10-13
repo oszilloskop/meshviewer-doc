@@ -10,5 +10,8 @@
   },
   "scripts": {
     "build-release": "yarn run gitbook install; yarn run gitbook build; yarn run gitbook pdf ./ ./_book/meshviewer.pdf;yarn run gitbook mobi ./ ./_book/meshviewer.mobi;yarn run gitbook epub ./ ./_book/meshviewer.epub"
+  },
+  "dependencies": {
+    "svgexport": "^0.3.2"
   }
 }
