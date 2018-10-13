@@ -1,31 +1,45 @@
 # Changelog
 
-
-## 11.0.0 [not released yet]
-* [!!!][TASK] Router hash form `#` to `#!`
-* [TASK] Domain code adjustments [panned]
-* [TASK] GeoJSON support
-* [TASK] Night mode color adjustments
-* [TASK] NodeJS v10 support, removed v9 support (active v6,v8,v10)
-* [TASK] Add possibility for custom links e.g. DSGVO
-* [TASK] Add OpenGraph, twitter card & Microdata + Favicon update
-* [TASK] Simple offline service worker
-* [TASK] Add source/target address to link variables with fallback (babel support)
-* [TASK] Show rectangle gateway in forcegraph
-* [TASK] Show offline 
-* [TASK] Dependency updates
+## 11.0.0
+* [TASK] Use Promises for GeoJSON
+* [TASK] Update packages & add SHA integrity
+* **[TASK] Replace site with domain**
+* **[TASK] Libary updates gulp4**
+* **[TASK] Prevent XSS in tooltip**
+* [TASK] Remove unnecessary moment
+* [TASK] Remove obsolete windows, rename macosx to osx
+* [TASK] Remove bithound
+* [TASK] Remove localStorage
+* **[TASK] Add dynamic title to offline html and multiple metatags**
+* **[TASK] Add optional fullscreen mode**
+* **[TASK] Add GeoJSON support**
+* [TASK] Improve night colors
+* **[!!!][TASK] Indexable urls**
 * [BUGFIX] URL router can fail at high load
-* [BUGFIX] Loadavg with multiple cores in %
-* [BUGFIX] Allow negative coordinates
-* [More detail in the commit history](https://github.com/ffrgb/meshviewer/commits/master)
+* [TASK] Update github issue templates
+* [TASK] Add nodejs 10 and remove 9 from travis
+* [TASK] Move to v8 promies polyfill & eslint5
+* **[TASK] Add posibility for links DSGVO** und natürlich auch andere
+* **[TASK] Add OpenGraph, twitter card & Microdata + Favicon update**
+* **[TASK] Add simple offline service worker**
+* **[TASK] Add source/target address to link variables**
+* [BUGFIX] Bar width max 100%
+* **[BUGFIX] Allow negative coordinates**
+* **[BUGFIX] Correct filled loadavg bar with nproc > 1**
+* **[TASK] Show rectangle gateway in forcegraph**
+* **[TASK] Show offline nodes in forcegraph**
+* [TASK] Upgrade to leaflet 1.3
+* [TASk] Upgrade to navigo 7
+* [Multiple minor libary updates like d3js](https://github.com/ffrgb/meshviewer/commits/v11.0.0)
 
 ### Additionally
 * `multiple`-branch
 	* Our test environment has now over 21500 nodes on a single map and still works  https://multi.meshviewer.org/
-* We moved the docu, website, multi and develop instance - currently no auto builds on mast branch
+* We moved the docu, website, multi and develop instance - currently no auto builds on master branch
 * Multiple changes on webhooks and tests like scrutinizer
 
 **THX @all active and passed contributors!**
+=======
 
 ## 10.0.0
 
@@ -64,7 +78,11 @@
 * Few Internet Explorer 11 fixes
 * Necessary polyfills - no overhead
 * **Switch to meshviewer.json - less depth, new informations**
+<<<<<<< Updated upstream
 * [A lot more in the commit history](https://github.com/ffrgb/meshviewer/commits/master)
+=======
+* [A lot more in the commit history](https://github.com/ffrgb/meshviewer/commits/v10.0.0)
+>>>>>>> Stashed changes
 
 
 
