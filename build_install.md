@@ -19,6 +19,8 @@ Execute these commands on your server as a normal user to prepare the dependenci
 git clone https://github.com/ffrgb/meshviewer.git
 cd meshviewer
 yarn
+# Copy the ffrgb-config as a template
+cp config.ffrgb.js config.js
 # Only needed if no global gulp is installed / OS like arch provides a package
 yarn global add gulp-cli
 ```
