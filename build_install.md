@@ -38,3 +38,13 @@ gulp
 ```
 
 This will generate the folder `build/` that will contain all required files.
+
+## Upgrade
+
+1. Update the git repository but keep your local changes:
+
+       git update-index --assume-unchanged config.js
+      
+2. Check your config for possible changes that were added since your last checkout
+      
+3. Run the build step again
