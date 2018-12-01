@@ -1,8 +1,8 @@
 <h1 align="center">Meshviewer documentation</h1>
 ---
 <p  align="center">
-<a href="https://travis-ci.org/ffrgb/meshviewer">
-<img src="https://img.shields.io/travis/ffrgb/meshviewer/develop.svg?style=flat-square" />
+<a href="https://travis-ci.com/ffrgb/meshviewer">
+<img src="https://img.shields.io/travis/com/ffrgb/meshviewer/develop.svg?style=flat-square" />
 </a>
 <a href="https://scrutinizer-ci.com/g/ffrgb/meshviewer/?branch=develop">
 <img src="https://img.shields.io/scrutinizer/g/ffrgb/meshviewer/develop.svg?style=flat-square" />

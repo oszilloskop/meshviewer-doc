@@ -1,5 +1,19 @@
 # Changelog
 
+## 11.1.0
+* **[TASK] Add nodes as title and link to link-infobox**
+* [BUGFIX] Update gulp-inline-source & injectFaviconMarkups
+* **[TASK] Update packages to remove flatmap-stream**
+* **[BUGFIX] Clear link/node in sidebar destroy**
+* [TASK] Nodejs 11 support/tests
+* [TASK] Avoid unnecessary loops in domain name mapping
+* [TYPO] Change Ghz to GHz
+* [All changes](https://github.com/ffrgb/meshviewer/commits/v11.1.0)
+
+### Additionally
+* v11.0.0 isn't buildable anymore because of deleted build dependency
+* Moved form travis-ci.org to travis-ci.com
+
 ## 11.0.0
 * [TASK] Use Promises for GeoJSON
 * [TASK] Update packages & add SHA integrity
